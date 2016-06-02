@@ -1,13 +1,5 @@
-# TestCocoaPod
+MobiKwik iOS SDK is a ready to use native solution for iOS applications (iOS 7 and above) to start accepting payments. This SDK provides both, fully functional user interface and API based methods for merchants who want to use their own interface.
 
-[![CI Status](http://img.shields.io/travis/Akashdeep/TestCocoaPod.svg?style=flat)](https://travis-ci.org/Akashdeep/TestCocoaPod)
-[![Version](https://img.shields.io/cocoapods/v/TestCocoaPod.svg?style=flat)](http://cocoapods.org/pods/TestCocoaPod)
-[![License](https://img.shields.io/cocoapods/l/TestCocoaPod.svg?style=flat)](http://cocoapods.org/pods/TestCocoaPod)
-[![Platform](https://img.shields.io/cocoapods/p/TestCocoaPod.svg?style=flat)](http://cocoapods.org/pods/TestCocoaPod)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
 
