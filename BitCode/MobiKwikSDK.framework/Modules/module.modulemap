@@ -1,0 +1,6 @@
+framework module MobiKwikSDK {
+  umbrella header "MobiKwikSDK.h"
+
+  export *
+  module * { export * }
+}
