@@ -14,7 +14,7 @@ Based on requirements, merchants can choose from the following list of payment m
 
 ## Prerequisites
 Before starting with client integration process for your iOS application, please make sure that following steps and requirements have been met.
-- **Merchant Identifier :** All MobiKwik merchants are provided with a unique merchant id e.g. MBK9002. You can find your merchant id and secret key in you MobiKwik [merchant account](https://wallet.mobikwik.com).
+- **Merchant Identifier :** All MobiKwik merchants are provided with a unique merchant id e.g. MBK9002. You can find your merchant id and secret key in your MobiKwik [merchant account](https://wallet.mobikwik.com).
  
 - **Merchant Checksum URL :** All network calls from SDK are checksum protected. This checksum is calculated by merchant server with a secret key which is available in your MobiKwik merchant account.
 
