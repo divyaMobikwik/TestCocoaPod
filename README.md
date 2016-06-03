@@ -23,7 +23,7 @@ Before starting with client integration process for your iOS application, please
 
 ## Integration
 
-###Add SDK to project
+###Add SDK to Project
 
 MobiKwik SDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -39,6 +39,75 @@ pod 'MobiKwik SDK/Bitcode', '~> 2.0'
 ```
 
 If you are not using CocoaPods in your project, download the required MobiKwik `.framework` file from this GitHub page. Drag & drop the framework in your project. Make sure that you check the option `Copy items if needed`.
+
+###Initiate Payment Engine
+
+All the payment requests and responses are handled by class `MKSDKPaymentEngine` and its delegate methods. Create an instance of payment engine class which resides in memory till transaction lasts.
+
+```obj-c
+#import <MobiKwikSDK/MobiKwikSDK.h>
+
+@interface CheckoutPageVC ()<MKSDKPaymentDelegate>
+@property MKSDKPaymentEngine *MBKSDKInstance;
+@end
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.MBKSDKInstance = [[MKSDKPaymentEngine alloc] init];
+   [self.MBKSDKInstance setDelegate:self];
+```
+
+####Delegates
+All the responses of the transaction will be provided by SDK in respective delegate methods.
+```obj-c
+#pragma mark - MobiKwik SDK Delegates
+
+-(void)mksdkPaymentSucceeded:(MKSDKPaymentInfo *)payment
+{
+    //Payment SUCCESS
+}
+
+-(void)mksdkPaymentFailed:(MKSDKPaymentInfo *)payment withError:(NSError *)failError
+{
+    //Payment FAILED with error. Status code is error.code , failure description is failError.localizedDescription
+}
+
+-(void)mksdkPaymentInitiated:(MKSDKPaymentInfo *)payment inWebview:(UIWebView *)webview
+{
+    //Payment started re-directing to bank page in webview.
+}
+
+-(void)mksdkPaymentHitTimeOut
+{
+    //Payment HIT TIMEOUT
+}
+
+-(void)mksdkPaymentWebpageStartedLoading
+{
+    //Webpage Started Loading
+}
+
+-(void)mksdkPaymentWebpageStoppedLoading
+{
+    //Webpage Stopped Loading
+}
+
+```
+
+ - **mksdkPaymentSucceeded :** Transaction got completed successfully.
+
+ - **mksdkPaymentFailed :** Transaction failed because of an error failError. Status code is present in code property of failError object and reason for failure in localizedDescription property.
+ 
+ - **mksdkPaymentInitiated :** When using your own UI, SDK will provide you with an UIWebView object running bank redirects. Merchants can use this webview in their own UI.
+ 
+ - **mksdkPaymentHitTimeOut :** While using your own UI, SDK notifies merchant with this delegate that a bank page is taking time to load. You can ask to either wait for it to load or cancel transaction.
+ 
+ - **mksdkPaymentWebpageStartedLoading :** While using your own UI, SDK notifies merchant that a bank page has started to load in provided UIWebView object.
+ 
+ - **mksdkPaymentWebpageStoppedLoading :** While using your own UI, SDK notifies merchant that a bank page has stopped loading in provided UIWebView object.
+
 
 
 ## Author
