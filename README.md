@@ -21,13 +21,19 @@ Before starting with client integration process for your iOS application, please
 - **Merchant Response URL :** MobiKwik notifies merchant server at this URL regarding transaction’s state. This URL is also used for card, saved cards and netbanking payment methods.
 
 
-## Installation
+## Integration
 
-TestCocoaPod is available through [CocoaPods](http://cocoapods.org). To install
+MobiKwik SDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "TestCocoaPod"
+pod 'MobiKwik SDK', '~> 2.0'
+```
+
+If you have enabled Bitcode in your project, you need to add following line in your Podfile:
+
+```ruby
+pod 'MobiKwik SDK/Bitcode', '~> 2.0'
 ```
 
 ## Author
