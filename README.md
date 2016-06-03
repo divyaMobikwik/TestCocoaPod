@@ -23,6 +23,8 @@ Before starting with client integration process for your iOS application, please
 
 ## Integration
 
+###Add SDK to project
+
 MobiKwik SDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
@@ -35,6 +37,9 @@ If you have enabled Bitcode in your project, you need to add following line in y
 ```ruby
 pod 'MobiKwik SDK/Bitcode', '~> 2.0'
 ```
+
+If you are not using CocoaPods in your project, download the required MobiKwik `.framework` file from this GitHub page. Drag & drop the framework in your project. Make sure that you check the option `Copy items if needed`.
+
 
 ## Author
 
