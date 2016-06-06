@@ -113,9 +113,12 @@ All the responses of the transaction will be provided by SDK in respective deleg
 `MKSDKPaymentEngine` class provide different methods for different payment flows. Merchants can choose payment flows according to their requirements. SDK provides all the payment modes (except MobiKwik Wallet) with UI and without UI support. To initiate any chosen payment flow, call required method from `MKSDKPaymentEngine` object in your final pay button action. Find more details regarding payment methods and `MKSDKPaymentInfo` object in Integration Document present in this repo.
 
 
-## Author
+## Support
+For any query, issue and integration support, please contact technical support at techops@mobikwik.com.
 
+## Author
 Akashdeep, akashdeep@mobikwik.com
+
 
 ## License
 
